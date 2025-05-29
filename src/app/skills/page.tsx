@@ -24,12 +24,12 @@ const fadeInUp = {
 
 export default function SkillsPage() {
   return (
-    <main className=" px-6 py-12 mb-10 bg-white dark:bg-black text-center">
+    <main className="px-6 py-12 mb-10 bg-white dark:bg-black text-center">
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-indigo-600 mb-12"
+        className="text-4xl font-bold  mb-12"
       >
         My Skills
       </motion.h1>

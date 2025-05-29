@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import AnimatedSection from "../component/AnimatedSection";
-// import emailjs from '@emailjs/browser'
-// import AnimatedSection from '../components/AnimatedSection'
+import Swal from "sweetalert2";
 
 export default function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -14,33 +14,35 @@ export default function ContactPage() {
     e.preventDefault();
     setLoading(true);
 
-    //     emailjs
-    //       .sendForm(
-    //         'your_service_id',      // Replace with your EmailJS service ID
-    //         'your_template_id',     // Replace with your template ID
-    //         formRef.current!,
-    //         'your_public_key'       // Replace with your public key
-    //       )
-    //       .then(
-    //         () => {
-    //           setLoading(false)
-    //           setSuccess(true)
-    //           formRef.current?.reset()
-    //         },
-    //         (error) => {
-    //           setLoading(false)
-    //           console.error(error)
-    //           alert('Failed to send. Try again later.')
-    //         }
-    //       )
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        "service_3kv2yxb",
+        "template_64hu0ki",
+        formRef.current,
+        "T5DqIO4V57QV4eIaf" //  Your Public Key
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setSuccess(true);
+          formRef.current?.reset();
+          Swal.fire("Success!", "Your message has been sent!", "success");
+        },
+        (error) => {
+          setLoading(false);
+          console.error("Email send error:", error.text);
+          Swal.fire("Oops!", "Something went wrong. Try again later.", "error");
+        }
+      );
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-16">
+    <div className="max-w-2xl mx-auto px-4 py-16 text-white">
       <AnimatedSection>
         <h1 className="text-4xl font-bold mb-6 text-center">Contact Me</h1>
       </AnimatedSection>
-      {/* <AnimatedSection></AnimatedSection> */}
 
       <AnimatedSection>
         <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
@@ -49,21 +51,21 @@ export default function ContactPage() {
             name="user_name"
             placeholder="Your Name"
             required
-            className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-black dark:text-white"
+            className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-900 text-white"
           />
           <input
             type="email"
             name="user_email"
             placeholder="Your Email"
             required
-            className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-black dark:text-white"
+            className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-900 text-white"
           />
           <textarea
             name="message"
             placeholder="Your Message"
             rows={5}
             required
-            className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-black dark:text-white"
+            className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-900 text-white"
           ></textarea>
 
           <button
@@ -76,7 +78,7 @@ export default function ContactPage() {
 
           {success && (
             <p className="text-green-500 text-sm mt-2">
-              Message sent successfully!
+              ✅ Message sent successfully!
             </p>
           )}
         </form>

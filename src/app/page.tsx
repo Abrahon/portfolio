@@ -14,9 +14,8 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen mx-auto max-w-7xl overflow-hidden">
+    <div className="relative min-h-screen mx-auto max-w-7xl overflow-hidden ">
       {/* === Animated Triangle Background === */}
-      <AnimatedBackground />
 
       <div className="relative flex flex-col-reverse md:flex-row items-center justify-center px-6 py-16 text-center md:text-left gap-10 z-10">
         {/* === Left Section (Hero Text) === */}
@@ -50,91 +49,83 @@ export default function HomePage() {
               <FaLinkedin size={16} />
             </a>
           </div>
-          <AnimatedSection>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Hello, I'm <br />
-              <span className="text-indigo-500 capitalize">
-                <Typewriter
-                  words={[
-                    "Abrahon Mahmud Sujon",
-                    "A Frontend Developer",
-                    "A Full Stack Developer",
-                  ]}
-                  loop={true}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={50}
-                  deleteSpeed={50}
-                  delaySpeed={1500}
-                />
-              </span>
-            </h1>
-          </AnimatedSection>
 
-          <AnimatedSection>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-xl mb-6">
-              <span className="capitalize">
-                <Typewriter
-                  words={[
-                    "A passionate full stack developer who loves building clean, animated, and user-friendly web applications with modern technologies like Next.js, React,Tailwind CSS,Node js,Express js,MongoDB, python and Django.",
-                  ]}
-                  loop={true}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={100}
-                  deleteSpeed={50}
-                  delaySpeed={4000}
-                />
-              </span>
-            </p>
-          </AnimatedSection>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            Hello, I'm <br />
+            <span className="text-indigo-500 capitalize">
+              <Typewriter
+                words={[
+                  "Abrahon Mahmud Sujon",
+                  "A Frontend Developer",
+                  "A Full Stack Developer",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={50}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
+            </span>
+          </h1>
 
-          <AnimatedSection>
-            <div className="flex gap-4 justify-center md:justify-start">
-              <Link
-                href="/projects"
-                className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-xl mb-6">
+            <span className="capitalize">
+              <Typewriter
+                words={[
+                  "A passionate full stack developer who loves building clean, animated, and user-friendly web applications with modern technologies like Next.js, React,Tailwind CSS,Node js,Express js,MongoDB, python and Django.",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={100}
+                deleteSpeed={50}
+                delaySpeed={4000}
+              />
+            </span>
+          </p>
+
+          <div className="flex gap-4 justify-center md:justify-start">
+            <Link
+              href="/projects"
+              className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
+            >
+              View Projects
+            </Link>
+            <Link
+              href="/contact"
+              className="px-6 py-3 border border-indigo-600 text-indigo-600 rounded-md hover:bg-indigo-50 dark:hover:bg-gray-800 transition"
+            >
+              Contact Me
+            </Link>
+          </div>
+
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <button className="btn btn-primary  bg-gradient-to-r from-purple-500 to-pink-500 mr-5">
+              <a
+                href="https://drive.google.com/file/d/1O-DnipUB_0cRTXCppFEHPzlBwSWdHF40/view?usp=sharing"
+                download
+                className="px-5 py-3 bg-gray-900 hover:bg-indigo-800 hover:text-white text-white dark:bg-white dark:text-black rounded-md hover:scale-105 transition"
               >
-                View Projects
-              </Link>
-              <Link
-                href="/contact"
-                className="px-6 py-3 border border-indigo-600 text-indigo-600 rounded-md hover:bg-indigo-50 dark:hover:bg-gray-800 transition"
-              >
-                Contact Me
-              </Link>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection>
-            <div className="mt-10 flex flex-col items-center gap-4">
-              <button className="btn btn-primary  bg-gradient-to-r from-purple-500 to-pink-500 mr-5">
-                <a
-                  href="https://drive.google.com/file/d/1O-DnipUB_0cRTXCppFEHPzlBwSWdHF40/view?usp=sharing"
-                  download
-                  className="px-5 py-3 bg-gray-900 hover:bg-indigo-800 hover:text-white text-white dark:bg-white dark:text-black rounded-md hover:scale-105 transition"
-                >
-                  📄 Download Resume
-                </a>
-              </button>
-            </div>
-          </AnimatedSection>
+                📄 Download Resume
+              </a>
+            </button>
+          </div>
         </div>
 
         {/* === Right Section (Profile Image) === */}
-        <AnimatedSection>
-          <div className="flex-1 flex justify-center mb-10 md:mb-0">
-            <Image
-              src="/desk.png"
-              alt="Profile"
-              width={500}
-              height={500}
-              className=" shadow-lg transition-transform duration-500 spin-3d"
-              // className=" shadow-lg"
-              priority
-            />
-          </div>
-        </AnimatedSection>
+
+        <div className="flex-1 flex justify-center mb-10 md:mb-0">
+          <Image
+            src="/desk.png"
+            alt="Profile"
+            width={500}
+            height={500}
+            className=" shadow-lg transition-transform duration-500 spin-3d"
+            // className=" shadow-lg"
+            priority
+          />
+        </div>
       </div>
 
       {/* If you want About, Projects, Contact on homepage — create components (not full pages) and import them here */}

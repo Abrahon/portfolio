@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen px-4 py-20 mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 text-white">
       <AnimatedSection>
-        <div className="relative rounded-full overflow-hidden shadow-2xl border-4 border-green-700 w-[400px] h-[400px] group">
+        <div className="relative rounded-full overflow-hidden shadow-2xl border-4 border-indigo-700 w-[400px] h-[400px] group">
           {/* The image */}
           <Image
             src="/abrahon.jpg"

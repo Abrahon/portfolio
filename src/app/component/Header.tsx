@@ -71,7 +71,7 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
               className={`block text-base font-medium py-2 rounded transition duration-200 ${
                 pathname === link.href
-                  ? "text-white bg-indigo-500"
+                  ? "text-white text-center bg-indigo-700 w-20 px-2"
                   : "text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800"
               }`}
             >
