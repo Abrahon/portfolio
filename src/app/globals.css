@@ -24,6 +24,33 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Perspective wrapper */
+.perspective-800 {
+  perspective: 800px;
+}
+
+/* 3D hover effect */
+.transform-hover {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.transform-hover:hover {
+  transform: rotateY(10deg) rotateX(6deg) scale(1.05);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+@keyframes spin-3d {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.spin-3d:hover {
+  animation: spin-3d 1.5s linear infinite;
+}
 
 html {
   scroll-behavior: smooth;

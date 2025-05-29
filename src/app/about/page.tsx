@@ -1,50 +1,48 @@
 import Image from "next/image";
 import AnimatedSection from "../component/AnimatedSection";
 
-const timeline = [
-  { year: "2023", text: "Started learning web development" },
-  { year: "2024", text: "Built multiple freelance projects" },
-  { year: "2025", text: "Focused on Next.js & advanced UI/UX" },
-];
-
 export default function AboutPage() {
   return (
-    <div className="min-h-screen px-4 py-20 max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
+    <div className="min-h-screen px-4 py-20 mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 text-white">
       <AnimatedSection>
-        <Image
-          src="/abrahon.jpg"
-          alt="Profile"
-          width={400}
-          height={400}
-          className="rounded-full shadow-lg object-cover"
-          priority
-        />
+        <div className="relative rounded-full overflow-hidden shadow-2xl border-4 border-green-700 w-[400px] h-[400px] group">
+          {/* The image */}
+          <Image
+            src="/abrahon.jpg"
+            alt="Profile"
+            fill
+            className="object-cover transition-transform duration-700 group-hover:rotate-[360deg]"
+            priority
+          />
+
+          {/* Black blurred overlay, only visible on hover */}
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-700 group-hover:opacity-100 rounded-full" />
+        </div>
       </AnimatedSection>
 
       <div className="flex-1">
         <AnimatedSection>
-          <h1 className="text-4xl font-bold mb-6 text-center md:text-left">
+          <h1 className="text-4xl font-bold mb-6 text-center md:text-left text-white">
             About Me
           </h1>
         </AnimatedSection>
 
         <AnimatedSection>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-10 text-center md:text-left max-w-xl">
-            I'm a self-taught developer who loves building interactive UIs and
-            solving real-world problems using modern web technologies.
+          <p className="text-lg text-gray-300 mb-6 text-center md:text-left max-w-xl">
+            Hi, I'm <span className="text-white font-semibold">Sujon</span> — a
+            Full Stack Developer and Software Engineer currently studying at{" "}
+            <span className="text-white font-semibold">
+              Green University of Bangladesh
+            </span>
+            , Department of Computer Science and Engineering (CSE).
           </p>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="border-l-4 border-indigo-600 pl-6 space-y-8 max-w-xl mx-auto md:mx-0">
-            {timeline.map((item, index) => (
-              <div key={index} className="relative">
-                <div className="absolute -left-3 top-1 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white dark:border-gray-900" />
-                <p className="font-bold text-indigo-600">{item.year}</p>
-                <p className="text-gray-700 dark:text-gray-300">{item.text}</p>
-              </div>
-            ))}
-          </div>
+          <p className="text-lg text-gray-300 text-center md:text-left max-w-xl">
+            I love building web applications using modern technologies like{" "}
+            <strong>React</strong>, <strong>Next.js</strong>,{" "}
+            <strong>Tailwind CSS</strong>, <strong>MongoDB</strong>, and{" "}
+            <strong>Node.js</strong>. I’m passionate about creating elegant
+            UI/UX and solving real-world problems with clean, scalable code.
+          </p>
         </AnimatedSection>
       </div>
     </div>

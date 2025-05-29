@@ -1,35 +1,56 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   title: string;
-  description: string;
-  imageUrl: string;
-  link: string;
+  imageUrls: string[];
+  slug: string;
+  shortDescription: string;
 };
 
 export default function ProjectsCard({
   title,
-  description,
-  imageUrl,
-  link,
+  imageUrls,
+  slug,
+  shortDescription,
 }: Props) {
+  // Only take first 2 images
+  const images = imageUrls
+    .filter((url) => typeof url === "string" && url.trim() !== "")
+    .slice(0, 2);
+
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer" className="group">
-      <div className="border border-gray-300 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-        <Image
-          src={imageUrl}
-          alt={title}
-          width={600}
-          height={400}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <div className="p-4">
-          <h3 className="text-xl font-semibold mb-2">{title}</h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            {description}
-          </p>
-        </div>
+    <Link
+      href={`/projects/${slug}`}
+      className="block border shadow-xl hover:shadow-2xl border-gray-300 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group transform hover:scale-[1.02] hover:rotate-[-1deg]"
+      aria-label={`View details for project ${title}`}
+    >
+      <div className="flex w-full h-[200px]">
+        {images.map((url, idx) => (
+          <div
+            key={idx}
+            className={`
+              relative flex-1 overflow-hidden
+              ${idx === 0 ? "rounded-l-xl" : ""}
+              ${idx === 1 ? "rounded-r-xl" : ""}
+            `}
+          >
+            <Image
+              src={url}
+              alt={`${title} project screenshot ${idx + 1}`}
+              fill
+              sizes="50vw"
+              className="object-cover"
+              loading={idx === 0 ? "eager" : "lazy"}
+              priority={idx === 0}
+            />
+          </div>
+        ))}
       </div>
-    </a>
+      <div className="mt-4 p-2 ">
+        <h2 className="text-center font-bold text-2xl">{title}</h2>
+        <p className="text-center">{shortDescription}</p>
+      </div>
+    </Link>
   );
 }

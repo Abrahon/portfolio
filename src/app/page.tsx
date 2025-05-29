@@ -8,36 +8,84 @@ import AnimatedBackground from "./component/AnimatedBackground";
 import ProjectsPage from "./projects/page";
 import AboutPage from "./about/page";
 import ContactPage from "./contact/page";
-// import ProjectsCard from "./component/ProjectsCard";
-// DO NOT import full pages directly into HomePage
-// import AboutPage from "./about/page";
-// import ProjectsPage from "./projects/page";
-// import ContactPage from "./contact/page";
+import SkillsPage from "./skills/page";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen mx-auto max-w-7xl overflow-hidden">
       {/* === Animated Triangle Background === */}
       <AnimatedBackground />
 
       <div className="relative flex flex-col-reverse md:flex-row items-center justify-center px-6 py-16 text-center md:text-left gap-10 z-10">
         {/* === Left Section (Hero Text) === */}
+
         <div className="flex-1">
+          <div className="flex gap-4 mb-6 justify-center md:justify-start">
+            <a
+              href="https://www.facebook.com/ABRAHON?mibextid=ZbWKwL"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+            >
+              <FaFacebook size={16} />
+            </a>
+
+            <a
+              href="https://github.com/Abrahon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition"
+            >
+              <FaGithub size={16} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/md-sujon-2172a524b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
+            >
+              <FaLinkedin size={16} />
+            </a>
+          </div>
           <AnimatedSection>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Hello, I'm{" "}
+              Hello, I'm <br />
               <span className="text-indigo-500 capitalize">
-                abrahon mahmud sujon
+                <Typewriter
+                  words={[
+                    "Abrahon Mahmud Sujon",
+                    "A Frontend Developer",
+                    "A Full Stack Developer",
+                  ]}
+                  loop={true}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={50}
+                  deleteSpeed={50}
+                  delaySpeed={1500}
+                />
               </span>
             </h1>
           </AnimatedSection>
 
           <AnimatedSection>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-xl mb-6">
-              A passionate web developer who loves building clean, animated, and
-              user-friendly web applications with modern technologies like{" "}
-              <strong>Next.js</strong>, <strong>React</strong>, and{" "}
-              <strong>Tailwind CSS</strong>.
+              <span className="capitalize">
+                <Typewriter
+                  words={[
+                    "A passionate full stack developer who loves building clean, animated, and user-friendly web applications with modern technologies like Next.js, React,Tailwind CSS,Node js,Express js,MongoDB, python and Django.",
+                  ]}
+                  loop={true}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={100}
+                  deleteSpeed={50}
+                  delaySpeed={4000}
+                />
+              </span>
             </p>
           </AnimatedSection>
 
@@ -60,20 +108,15 @@ export default function HomePage() {
 
           <AnimatedSection>
             <div className="mt-10 flex flex-col items-center gap-4">
-              <a
-                href="/resume.pdf"
-                download
-                className="px-5 py-3 bg-gray-900 text-white dark:bg-white dark:text-black rounded-md hover:scale-105 transition"
-              >
-                📄 Download Resume
-              </a>
-
-              <div className="grid grid-cols-2 gap-6 text-center">
-                <div>
-                  <p className="text-2xl font-bold">30+</p>
-                  <p className="text-gray-600 dark:text-gray-400">Projects</p>
-                </div>
-              </div>
+              <button className="btn btn-primary  bg-gradient-to-r from-purple-500 to-pink-500 mr-5">
+                <a
+                  href="https://drive.google.com/file/d/1O-DnipUB_0cRTXCppFEHPzlBwSWdHF40/view?usp=sharing"
+                  download
+                  className="px-5 py-3 bg-gray-900 hover:bg-indigo-800 hover:text-white text-white dark:bg-white dark:text-black rounded-md hover:scale-105 transition"
+                >
+                  📄 Download Resume
+                </a>
+              </button>
             </div>
           </AnimatedSection>
         </div>
@@ -82,11 +125,12 @@ export default function HomePage() {
         <AnimatedSection>
           <div className="flex-1 flex justify-center mb-10 md:mb-0">
             <Image
-              src="/abrahon.jpg"
+              src="/desk.png"
               alt="Profile"
               width={500}
               height={500}
-              className="rounded-full shadow-lg hover:scale-105 transition duration-300"
+              className=" shadow-lg transition-transform duration-500 spin-3d"
+              // className=" shadow-lg"
               priority
             />
           </div>
@@ -97,6 +141,7 @@ export default function HomePage() {
 
       <AboutPage></AboutPage>
       <ProjectsPage></ProjectsPage>
+      <SkillsPage></SkillsPage>
       <ContactPage></ContactPage>
     </div>
   );
