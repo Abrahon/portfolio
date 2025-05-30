@@ -8,10 +8,6 @@ import "keen-slider/keen-slider.min.css";
 import Link from "next/link";
 import { use } from "react";
 
-type Props = {
-  params: { slug: string };
-};
-
 export default function ProjectDetailsPage({
   params,
 }: {

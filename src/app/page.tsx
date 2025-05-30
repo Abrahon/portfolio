@@ -2,9 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import AnimatedSection from "./component/AnimatedSection";
-import AnimatedBackground from "./component/AnimatedBackground";
-// import ProjectsCard from "./component/ProjectsCard";
 import ProjectsPage from "./projects/page";
 import AboutPage from "./about/page";
 import ContactPage from "./contact/page";
