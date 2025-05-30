@@ -50,7 +50,7 @@ export default function HomePage() {
             </a>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Hello, I'm <br />
             <span className="text-indigo-500 capitalize">
               <Typewriter
@@ -80,7 +80,7 @@ export default function HomePage() {
                 cursorStyle="|"
                 typeSpeed={100}
                 deleteSpeed={50}
-                delaySpeed={4000}
+                delaySpeed={2000}
               />
             </span>
           </p>

@@ -32,7 +32,7 @@ export default function ProjectDetailsPage({
   if (!project) return notFound();
 
   return (
-    <div className="min-h-screen px-6 py-16 max-w-5xl mx-auto">
+    <div className="min-h-screen mx-auto max-w-7xl px-6 py-16 ">
       <h1 className="text-4xl font-bold mb-8 text-center">{project.title}</h1>
 
       {/* === Image Slider === */}
@@ -108,8 +108,6 @@ export default function ProjectDetailsPage({
           </div>
         </div>
       )}
-
-      {/* === Description === */}
     </div>
   );
 }
