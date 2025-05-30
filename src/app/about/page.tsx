@@ -26,7 +26,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-lg text-gray-300 mb-6 text-center md:text-left max-w-xl">
-            Hi, I'm <span className="text-white font-semibold">Sujon</span> — a
+            Hi, I'm <span className="text-white font-semibold">Sujon</span>, a
             Full Stack Developer and Software Engineer currently studying at{" "}
             <span className="text-white font-semibold">
               Green University of Bangladesh
@@ -38,7 +38,7 @@ export default function AboutPage() {
             I love building web applications using modern technologies like{" "}
             <strong>React</strong>, <strong>Next.js</strong>,{" "}
             <strong>Tailwind CSS</strong>, <strong>MongoDB</strong>, and{" "}
-            <strong>Node.js</strong>. I’m passionate about creating elegant
+            <strong>Node.js</strong>. I&apos;m passionate about creating elegant
             UI/UX and solving real-world problems with clean, scalable code.
           </p>
         </div>
