@@ -40,45 +40,46 @@ export default function ContactPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-16 text-white">
-      <h1 className="text-4xl font-bold mb-6 text-center">Contact Me</h1>
+      <AnimatedSection>
+        <h1 className="text-4xl font-bold mb-6 text-center">Contact Me</h1>
+        <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Your Name"
+            required
+            className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-900 text-white"
+          />
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Your Email"
+            required
+            className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-900 text-white"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows={5}
+            required
+            className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-900 text-white"
+          ></textarea>
 
-      <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
-        <input
-          type="text"
-          name="user_name"
-          placeholder="Your Name"
-          required
-          className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-900 text-white"
-        />
-        <input
-          type="email"
-          name="user_email"
-          placeholder="Your Email"
-          required
-          className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-900 text-white"
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          rows={5}
-          required
-          className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-900 text-white"
-        ></textarea>
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-indigo-600 text-white font-medium py-3 px-6 rounded-md hover:bg-indigo-700 transition"
+          >
+            {loading ? "Sending..." : "Send Message"}
+          </button>
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="bg-indigo-600 text-white font-medium py-3 px-6 rounded-md hover:bg-indigo-700 transition"
-        >
-          {loading ? "Sending..." : "Send Message"}
-        </button>
-
-        {success && (
-          <p className="text-green-500 text-sm mt-2">
-            ✅ Message sent successfully!
-          </p>
-        )}
-      </form>
+          {success && (
+            <p className="text-green-500 text-sm mt-2">
+              ✅ Message sent successfully!
+            </p>
+          )}
+        </form>
+      </AnimatedSection>
     </div>
   );
 }
