@@ -48,7 +48,7 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Hello, I'm <br />
+            Hello, I&apos;m <br />
             <span className="text-indigo-500 capitalize">
               <Typewriter
                 words={[
@@ -70,7 +70,7 @@ export default function HomePage() {
             <span className="capitalize">
               <Typewriter
                 words={[
-                  "A passionate full stack developer who loves building clean, animated, and user-friendly web applications with modern technologies like Next.js, React,Tailwind CSS,Node js,Express js,MongoDB, python and Django.",
+                  "A passionate full stack developer who loves building clean, animated, and user-friendly web applications with modern technologies like Next.js, React, Tailwind CSS, Node.js, Express.js, MongoDB, Python, and Django.",
                 ]}
                 loop={true}
                 cursor
@@ -98,15 +98,14 @@ export default function HomePage() {
           </div>
 
           <div className="mt-10 flex flex-col items-center gap-4">
-            <button className="btn btn-primary  bg-gradient-to-r from-purple-500 to-pink-500 mr-5">
-              <a
-                href="https://drive.google.com/file/d/1O-DnipUB_0cRTXCppFEHPzlBwSWdHF40/view?usp=sharing"
-                download
-                className="px-5 py-3 bg-gray-900 hover:bg-indigo-800 hover:text-white text-white dark:bg-white dark:text-black rounded-md hover:scale-105 transition"
-              >
-                📄 Download Resume
-              </a>
-            </button>
+            <a
+              href="https://drive.google.com/file/d/1O-DnipUB_0cRTXCppFEHPzlBwSWdHF40/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-3 bg-gray-900 hover:bg-indigo-800 hover:text-white text-white dark:bg-white dark:text-black rounded-md hover:scale-105 transition inline-block"
+            >
+              📄 Download Resume
+            </a>
           </div>
         </div>
 
@@ -118,8 +117,7 @@ export default function HomePage() {
             alt="Profile"
             width={500}
             height={500}
-            className=" shadow-lg transition-transform duration-500 spin-3d"
-            // className=" shadow-lg"
+            className="shadow-lg transition-transform duration-500 spin-3d"
             priority
           />
         </div>
@@ -127,10 +125,10 @@ export default function HomePage() {
 
       {/* If you want About, Projects, Contact on homepage — create components (not full pages) and import them here */}
 
-      <AboutPage></AboutPage>
-      <ProjectsPage></ProjectsPage>
-      <SkillsPage></SkillsPage>
-      <ContactPage></ContactPage>
+      <AboutPage />
+      <ProjectsPage />
+      <SkillsPage />
+      <ContactPage />
     </div>
   );
 }

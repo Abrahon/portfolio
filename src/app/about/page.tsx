@@ -26,8 +26,8 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-lg text-gray-300 mb-6 text-center md:text-left max-w-xl">
-            Hi, I'm <span className="text-white font-semibold">Sujon</span>, a
-            Full Stack Developer and Software Engineer currently studying at{" "}
+            Hi, I&apos;m <span className="text-white font-semibold">Sujon</span>
+            , a Full Stack Developer and Software Engineer currently studying at{" "}
             <span className="text-white font-semibold">
               Green University of Bangladesh
             </span>
