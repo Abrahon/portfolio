@@ -6,7 +6,7 @@ export default function AboutPage() {
     <div className="mx-auto max-w-7xl px-4 py-10 flex flex-col md:flex-row items-center md:items-start gap-12 text-white">
       {/* Animated Profile Image Section */}
       <AnimatedSection>
-        <div className="relative rounded-full overflow-hidden shadow-2xl border-4 border-indigo-700 w-[400px] h-[400px] group">
+        <div className="relative rounded-full overflow-hidden shadow-2xl border-4 border-indigo-700 w-[300px] h-[300px] md:w-[400px] md:h-[400px] group">
           <Image
             src="/abrahon.jpg"
             alt="Profile"

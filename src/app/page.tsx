@@ -85,7 +85,7 @@ export default function HomePage() {
           <div className="flex gap-4 justify-center md:justify-start">
             <Link
               href="/projects"
-              className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
+              className="px-7 md:px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
             >
               View Projects
             </Link>
